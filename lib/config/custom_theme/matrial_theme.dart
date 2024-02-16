@@ -3,9 +3,9 @@ import 'package:assalim/config/extention/matrial_theme_extension.dart';
 import 'package:flutter/material.dart';
 
 class MaterialTheme {
-  final TextTheme textTheme;
-
   const MaterialTheme(this.textTheme);
+
+  final TextTheme textTheme;
 
   static MaterialScheme lightScheme() {
     return const MaterialScheme(

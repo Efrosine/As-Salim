@@ -24,39 +24,3 @@ class MainApp extends StatelessWidget {
     );
   }
 }
-
-class Coba extends StatelessWidget {
-  const Coba({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            SizedBox.square(
-              dimension: 100,
-              child: Container(
-                color: Theme.of(context).colorScheme.primary,
-                child: Text(Theme.of(context).colorScheme.primary.toString()),
-              ),
-            ),
-            SizedBox.square(
-              dimension: 100,
-              child: Container(
-                color: Theme.of(context).colorScheme.secondary,
-              ),
-            ),
-            SizedBox.square(
-              dimension: 100,
-              child: Container(
-                color: Theme.of(context).colorScheme.tertiary,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
