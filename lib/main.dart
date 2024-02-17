@@ -21,10 +21,7 @@ class MainApp extends StatelessWidget {
       theme: MaterialTheme(sl()).light(),
       darkTheme: MaterialTheme(sl()).dark(),
       onGenerateRoute: AppRoutes.onGenerateRoute,
-      initialRoute: '/on_boarding',
-      routes: {
-        '/on_boarding': (context) => OnboardingPage(),
-      },
+      initialRoute: '/onboarding',
     );
   }
 }
