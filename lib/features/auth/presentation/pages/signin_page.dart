@@ -105,7 +105,8 @@ class SignInPage extends StatelessWidget {
                             Center(
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                    backgroundColor: CColors.buttonBackground,
+                                    backgroundColor:
+                                        context.colorScheme.primary,
                                     minimumSize: Size(264, 40)),
                                 onPressed: () {
                                   // Handle login here
