@@ -27,7 +27,7 @@ class OnboardingPage extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 40),
-                    Text("As-Saalim",
+                    Text("As-Saalimm",
                         style: Theme.of(context).textTheme.displayMedium),
                     Text("Selamat Datang",
                         style: Theme.of(context).textTheme.headlineSmall),
