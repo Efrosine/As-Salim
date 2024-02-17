@@ -1,5 +1,5 @@
 import 'package:assalim/config/custom_theme/matrial_scheme.dart';
-import 'package:assalim/config/extention/matrial_theme_extension.dart';
+import 'package:assalim/config/extension/matrial_theme_extension.dart';
 import 'package:flutter/material.dart';
 
 class MaterialTheme {
