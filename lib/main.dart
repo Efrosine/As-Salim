@@ -1,6 +1,5 @@
 import 'package:assalim/config/custom_theme/matrial_theme.dart';
 import 'package:assalim/config/route/routes.dart';
-import 'package:assalim/features/main_feature/presentation/pages/main_pages.dart';
 import 'package:flutter/material.dart';
 
 import 'core/dependency_injection/injection_container.dart';
@@ -21,10 +20,7 @@ class MainApp extends StatelessWidget {
       theme: MaterialTheme(sl()).light(),
       darkTheme: MaterialTheme(sl()).dark(),
       onGenerateRoute: AppRoutes.onGenerateRoute,
-      initialRoute: '/on_boarding',
-      routes: {
-        '/on_boarding': (context) => OnboardingPage(),
-      },
+      initialRoute: '/onboarding',
     );
   }
 }

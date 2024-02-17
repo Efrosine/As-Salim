@@ -1,6 +1,7 @@
 import 'package:assalim/config/constants/color.dart';
 import 'package:assalim/core/common/custom_background/base_background.dart';
 import 'package:assalim/core/common/custom_widget/backgroud_widget.dart';
+import 'package:assalim/features/auth/presentation/pages/signin_page.dart';
 import 'package:assalim/features/main_feature/presentation/pages/login_page.dart';
 import 'package:flutter/material.dart';
 
@@ -36,7 +37,7 @@ class OnboardingPage extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Login_Page()),
+                          MaterialPageRoute(builder: (context) => SignInPage()),
                         );
                       },
                       style: ElevatedButton.styleFrom(

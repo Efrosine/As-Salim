@@ -23,4 +23,5 @@ class CColors {
     ],
     stops: [0.0, 0.2, 1],
   );
+  static const Color buttonBackground = Color(0xFF00687A);
 }
