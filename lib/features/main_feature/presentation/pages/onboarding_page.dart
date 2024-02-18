@@ -18,14 +18,8 @@ class OnboardingPage extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    CircleAvatar(
-                      radius: 80,
-                      child: Icon(
-                        Icons.person,
-                        size: 80,
-                        color: Colors.white,
-                      ),
-                    ),
+                    Image.asset("assets/logo/logo.png",
+                        fit: BoxFit.cover, height: 200),
                     SizedBox(height: 40),
                     Text("As-Saalimm",
                         style: Theme.of(context).textTheme.displayMedium),
