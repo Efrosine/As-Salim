@@ -167,25 +167,26 @@ class SignUpPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 30),
+                  SizedBox(height: 60),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      CircleAvatar(
-                        radius: 30,
-                        backgroundColor: Colors.black,
+                      Image.asset(
+                        "assets/logo/kemenag.png",
+                        height: 60,
                       ),
                       SizedBox(width: 25),
-                      CircleAvatar(
-                        radius: 30,
-                        backgroundColor: Colors.black,
-                      )
+                      Image.asset(
+                        "assets/logo/kemenkes.png",
+                        fit: BoxFit.cover,
+                        height: 48,
+                      ),
                     ],
                   )
                 ],
               ),
               Positioned(
-                top: 45,
+                top: 35,
                 left: 145,
                 right: 145,
                 child: CircleAvatar(
