@@ -1,9 +1,9 @@
 import 'dart:ui';
-
-import 'package:assalim/config/constants/color.dart';
 import 'package:assalim/config/extension/color_scheme_extentsion.dart';
 import 'package:assalim/core/common/custom_background/base_background.dart';
 import 'package:assalim/core/common/custom_widget/backgroud_widget.dart';
+import 'package:assalim/features/auth/presentation/pages/auth_pages.dart';
+import 'package:assalim/features/main_feature/presentation/pages/main_pages.dart';
 import 'package:flutter/material.dart';
 
 class SignInPage extends StatelessWidget {
@@ -14,6 +14,7 @@ class SignInPage extends StatelessWidget {
     return BackgourdWidget(
         baseBackground: BaseBackground.varian1(),
         child: Scaffold(
+          resizeToAvoidBottomInset: false,
           backgroundColor: Colors.transparent,
           body: Stack(
             children: [
@@ -94,12 +95,19 @@ class SignInPage extends StatelessWidget {
                             Align(
                               alignment: Alignment.centerRight,
                               child: TextButton(
-                                  onPressed: () {},
-                                  child: Text(
-                                    "Lupa Password?",
-                                    style:
-                                        Theme.of(context).textTheme.labelLarge,
-                                  )),
+                                onPressed: () {},
+                                child: Text(
+                                  "Lupa Password?",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .labelLarge!
+                                      .copyWith(
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .primary,
+                                      ),
+                                ),
+                              ),
                             ),
                             SizedBox(height: 32),
                             Center(
@@ -109,10 +117,14 @@ class SignInPage extends StatelessWidget {
                                         context.colorScheme.primary,
                                     minimumSize: Size(264, 40)),
                                 onPressed: () {
-                                  // Handle login here
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => NavBarPage()),
+                                  );
                                 },
                                 child: Text(
-                                  'Login',
+                                  'Masuk',
                                   style: Theme.of(context)
                                       .textTheme
                                       .labelLarge!
@@ -132,13 +144,25 @@ class SignInPage extends StatelessWidget {
                                   width: 5,
                                 ),
                                 TextButton(
-                                    onPressed: () {},
-                                    child: Text(
-                                      "Daftar",
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .labelLarge,
-                                    )),
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => SignUpPage()),
+                                    );
+                                  },
+                                  child: Text(
+                                    "Daftar",
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .labelLarge!
+                                        .copyWith(
+                                          color: Theme.of(context)
+                                              .colorScheme
+                                              .primary,
+                                        ),
+                                  ),
+                                ),
                               ],
                             ),
                           ],
@@ -146,25 +170,26 @@ class SignInPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 30),
+                  SizedBox(height: 50),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      CircleAvatar(
-                        radius: 30,
-                        backgroundColor: Colors.black,
+                      Image.asset(
+                        "assets/logo/kemenag.png",
+                        height: 60,
                       ),
-                      SizedBox(width: 15),
-                      CircleAvatar(
-                        radius: 30,
-                        backgroundColor: Colors.black,
-                      )
+                      SizedBox(width: 25),
+                      Image.asset(
+                        "assets/logo/kemenkes.png",
+                        fit: BoxFit.cover,
+                        height: 48,
+                      ),
                     ],
                   )
                 ],
               ),
               Positioned(
-                top: 65,
+                top: 55,
                 left: 145,
                 right: 145,
                 child: CircleAvatar(
