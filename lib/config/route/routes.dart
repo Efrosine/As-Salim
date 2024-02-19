@@ -1,4 +1,5 @@
 import 'package:assalim/features/auth/presentation/pages/auth_pages.dart';
+import 'package:assalim/features/data/doctordata.dart';
 import 'package:assalim/features/main_feature/presentation/pages/main_pages.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,9 @@ class AppRoutes {
       case '/search_dissease':
         return _materialRoute(const SearchDisseasePage());
       case '/chat':
-        return _materialRoute(const ChatPage());
+        return _materialRoute(ChatPage(
+          doctor: doctors[0],
+        ));
       case '/monitor_blood_pressure':
         return _materialRoute(const MonitorBloodPressurePage());
       case '/monitor_water_comsumtion':

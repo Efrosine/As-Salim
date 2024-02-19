@@ -109,4 +109,31 @@ class BaseBackground {
       ],
     );
   }
+
+  static Widget varian3() {
+    return Stack(
+      children: [
+        Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              stops: [0.0, 0.8, 1.0],
+              colors: [
+                Color.fromARGB(255, 252, 252, 252),
+                Color.fromARGB(199, 242, 252, 255),
+                Color(0xff45D7F8),
+              ],
+            ),
+          ),
+        ),
+        Positioned.fill(
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 80, sigmaY: 80),
+            child: Container(color: Colors.white.withOpacity(0.1)),
+          ),
+        ),
+      ],
+    );
+  }
 }

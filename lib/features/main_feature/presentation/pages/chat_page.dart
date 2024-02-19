@@ -1,7 +1,10 @@
+import 'package:assalim/features/data/doctordata.dart';
 import 'package:flutter/material.dart';
 
 class ChatPage extends StatelessWidget {
-  const ChatPage({super.key});
+  final DoctorData doctor;
+
+  ChatPage({required this.doctor});
 
   @override
   Widget build(BuildContext context) {
