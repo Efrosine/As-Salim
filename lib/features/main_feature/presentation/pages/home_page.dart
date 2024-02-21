@@ -1,12 +1,13 @@
 import 'package:assalim/core/common/custom_background/base_background.dart';
 import 'package:assalim/core/common/custom_widget/backgroud_widget.dart';
-import 'package:assalim/features/data/categorydata.dart';
-import 'package:assalim/features/data/doctordata.dart';
+import 'package:assalim/features/Model/categorydata.dart';
+import 'package:assalim/features/Model/doctordata.dart';
 import 'package:assalim/features/main_feature/presentation/pages/main_pages.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  final TextEditingController searchController = TextEditingController();
+  HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -41,40 +42,45 @@ class HomePage extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 24),
-              InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => SearchDisseasePage()),
-                  );
-                },
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(18),
-                    color: Colors.grey[200],
-                  ),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: TextField(
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            hintText: "Punya masalah kesehatan?",
-                            hintStyle: Theme.of(context)
-                                .textTheme
-                                .bodyMedium!
-                                .copyWith(
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .onSurfaceVariant),
-                          ),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(18),
+                  color: Colors.grey[200],
+                ),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: TextField(
+                        controller: searchController,
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: "Punya masalah kesehatan?",
+                          hintStyle: Theme.of(context)
+                              .textTheme
+                              .bodyMedium!
+                              .copyWith(
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .onSurfaceVariant),
                         ),
                       ),
-                      Icon(Icons.search, color: Colors.grey),
-                    ],
-                  ),
+                    ),
+                    IconButton(
+                      onPressed: () {
+                        // Navigasi ke SearchDisseasePage dan kirim hasil pencarian
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SearchDisseasePage(
+                              initialQuery: searchController.text,
+                            ),
+                          ),
+                        );
+                      },
+                      icon: Icon(Icons.search),
+                    ),
+                  ],
                 ),
               ),
               SizedBox(height: 16),
@@ -96,6 +102,7 @@ class HomePage extends StatelessWidget {
               ),
               GridView.builder(
                 shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 3,
                   crossAxisSpacing: 16.0,
@@ -148,6 +155,7 @@ class HomePage extends StatelessWidget {
               ),
               ListView.builder(
                 shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
                 itemCount: doctors.length,
                 itemBuilder: (BuildContext context, int index) {
                   DoctorData doctor = doctors[index];

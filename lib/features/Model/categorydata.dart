@@ -1,4 +1,4 @@
-import 'package:assalim/features/data/doctordata.dart';
+import 'package:assalim/features/Model/doctordata.dart';
 import 'package:assalim/features/main_feature/presentation/pages/chat_page.dart';
 import 'package:assalim/features/main_feature/presentation/pages/healtypage.dart';
 import 'package:assalim/features/main_feature/presentation/pages/monitor_blood_pressure_page.dart';

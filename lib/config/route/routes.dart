@@ -1,5 +1,5 @@
 import 'package:assalim/features/auth/presentation/pages/auth_pages.dart';
-import 'package:assalim/features/data/doctordata.dart';
+import 'package:assalim/features/Model/doctordata.dart';
 import 'package:assalim/features/main_feature/presentation/pages/main_pages.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +15,9 @@ class AppRoutes {
       case '/narbar':
         return _materialRoute(const NavBarPage());
       case '/search_dissease':
-        return _materialRoute(const SearchDisseasePage());
+        return _materialRoute(const SearchDisseasePage(
+          initialQuery: "",
+        ));
       case '/chat':
         return _materialRoute(ChatPage(
           doctor: doctors[0],

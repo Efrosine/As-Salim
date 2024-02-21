@@ -1,4 +1,4 @@
-import 'package:assalim/features/data/doctordata.dart';
+import 'package:assalim/features/Model/doctordata.dart';
 import 'package:flutter/material.dart';
 
 class ChatPage extends StatelessWidget {
