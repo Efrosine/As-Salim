@@ -1,5 +1,7 @@
+import 'package:assalim/features/main_feature/presentation/pages/main_pages.dart';
 import 'package:flutter/material.dart';
 
+import 'config/custom_theme/matrial_theme.dart';
 import 'core/dependency_injection/injection_container.dart';
 
 Future<void> main() async {
@@ -14,11 +16,12 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        themeMode: ThemeMode.system,
-        theme: ThemeData.light(),
-        darkTheme: ThemeData.dark(),
-        home: const Scaffold(
-          body: Center(child: Text('Hello World')),
-        ));
+        themeMode: ThemeMode.light,
+        theme: MaterialTheme(sl()).light(),
+        darkTheme: MaterialTheme(sl()).dark(),
+        builder: (context, child) => MediaQuery(
+            data: MediaQuery.of(context).copyWith(textScaler: TextScaler.noScaling),
+            child: child!),
+        home: NutritionalNeedsPage());
   }
 }

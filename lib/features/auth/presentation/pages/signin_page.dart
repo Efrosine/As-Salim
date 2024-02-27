@@ -1,5 +1,7 @@
 import 'dart:ui';
-import 'package:assalim/config/extension/color_scheme_extentsion.dart';
+
+import 'package:assalim/config/constants/color.dart';
+import 'package:assalim/config/extension/build_context_extension.dart';
 import 'package:assalim/core/common/custom_background/base_background.dart';
 import 'package:assalim/core/common/custom_widget/backgroud_widget.dart';
 import 'package:assalim/features/auth/presentation/pages/auth_pages.dart';
@@ -55,13 +57,11 @@ class SignInPage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text("Login",
-                                style:
-                                    Theme.of(context).textTheme.displaySmall),
+                                style: Theme.of(context).textTheme.displaySmall),
                             SizedBox(height: 16),
                             TextField(
                               decoration: InputDecoration(
-                                floatingLabelBehavior:
-                                    FloatingLabelBehavior.always,
+                                floatingLabelBehavior: FloatingLabelBehavior.always,
                                 labelText: "Username",
                                 prefixIcon: Icon(
                                   Icons.search,
@@ -70,15 +70,14 @@ class SignInPage extends StatelessWidget {
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 ),
-                                contentPadding: EdgeInsets.symmetric(
-                                    horizontal: 16, vertical: 12),
+                                contentPadding:
+                                    EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                               ),
                             ),
                             SizedBox(height: 24),
                             TextField(
                               decoration: InputDecoration(
-                                floatingLabelBehavior:
-                                    FloatingLabelBehavior.always,
+                                floatingLabelBehavior: FloatingLabelBehavior.always,
                                 labelText: "Password",
                                 prefixIcon: Icon(
                                   Icons.search,
@@ -87,40 +86,30 @@ class SignInPage extends StatelessWidget {
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 ),
-                                contentPadding: EdgeInsets.symmetric(
-                                    horizontal: 16, vertical: 12),
+                                contentPadding:
+                                    EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                               ),
                             ),
                             SizedBox(height: 10),
                             Align(
                               alignment: Alignment.centerRight,
                               child: TextButton(
-                                onPressed: () {},
-                                child: Text(
-                                  "Lupa Password?",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .labelLarge!
-                                      .copyWith(
-                                        color: Theme.of(context)
-                                            .colorScheme
-                                            .primary,
-                                      ),
-                                ),
-                              ),
+                                  onPressed: () {},
+                                  child: Text(
+                                    "Lupa Password?",
+                                    style: Theme.of(context).textTheme.labelLarge,
+                                  )),
                             ),
                             SizedBox(height: 32),
                             Center(
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                    backgroundColor:
-                                        context.colorScheme.primary,
+                                    backgroundColor: context.colorScheme.primary,
                                     minimumSize: Size(264, 40)),
                                 onPressed: () {
                                   Navigator.push(
                                     context,
-                                    MaterialPageRoute(
-                                        builder: (context) => NavBarPage()),
+                                    MaterialPageRoute(builder: (context) => NavBarPage()),
                                   );
                                 },
                                 child: Text(
@@ -144,25 +133,11 @@ class SignInPage extends StatelessWidget {
                                   width: 5,
                                 ),
                                 TextButton(
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => SignUpPage()),
-                                    );
-                                  },
-                                  child: Text(
-                                    "Daftar",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelLarge!
-                                        .copyWith(
-                                          color: Theme.of(context)
-                                              .colorScheme
-                                              .primary,
-                                        ),
-                                  ),
-                                ),
+                                    onPressed: () {},
+                                    child: Text(
+                                      "Daftar",
+                                      style: Theme.of(context).textTheme.labelLarge,
+                                    )),
                               ],
                             ),
                           ],
