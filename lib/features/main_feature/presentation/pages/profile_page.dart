@@ -24,7 +24,7 @@ class ProfilePage extends StatelessWidget {
             child: Column(
               children: [
                 Container(
-                  padding: EdgeInsets.all(12),
+                  padding: const EdgeInsets.all(12),
                   height: 148,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(18),
@@ -32,7 +32,7 @@ class ProfilePage extends StatelessWidget {
                     boxShadow: [
                       BoxShadow(
                         color: Theme.of(context).colorScheme.outline,
-                        offset: Offset(0, 4),
+                        offset: const Offset(0, 4),
                         blurRadius: 4,
                       ),
                     ],
@@ -43,69 +43,62 @@ class ProfilePage extends StatelessWidget {
                         "Dillah Saputra",
                         style: Theme.of(context).textTheme.headlineSmall,
                       ),
-                      SizedBox(height: 12),
+                      const SizedBox(height: 12),
                       Expanded(
                         child: Row(
                           children: [
-                            CircleAvatar(
+                            const CircleAvatar(
                               radius: 31,
-                              backgroundImage:
-                                  AssetImage("assets/images/profile.jpg"),
+                              backgroundImage: AssetImage("assets/images/profile.jpg"),
                             ),
-                            SizedBox(width: 26),
+                            const SizedBox(width: 26),
                             Expanded(
                               child: ListView.builder(
                                 scrollDirection: Axis.horizontal,
                                 itemCount: userDataList.length,
                                 itemBuilder: (BuildContext context, int index) {
                                   final userData = userDataList[index];
-                                  return Container(
-                                    child: Row(
-                                      children: [
-                                        Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
-                                          children: [
-                                            Text(
-                                              userData.title,
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .bodySmall,
-                                            ),
-                                            CircleAvatar(
-                                              radius: 26,
-                                              backgroundColor: Colors.white,
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  Text(
-                                                    userData.value,
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .titleMedium,
-                                                  ),
-                                                  Text(
-                                                    userData.unit,
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .bodySmall,
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                        SizedBox(width: 12),
-                                        if (index < userDataList.length - 1)
-                                          VerticalDivider(
-                                            thickness: 2,
-                                            width: 2,
-                                            color: Colors.white,
+                                  return Row(
+                                    children: [
+                                      Column(
+                                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          Text(
+                                            userData.title,
+                                            style: Theme.of(context).textTheme.bodySmall,
                                           ),
-                                        SizedBox(width: 12),
-                                      ],
-                                    ),
+                                          CircleAvatar(
+                                            radius: 26,
+                                            backgroundColor: Colors.white,
+                                            child: Column(
+                                              mainAxisAlignment: MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  userData.value,
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .titleMedium,
+                                                ),
+                                                Text(
+                                                  userData.unit,
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .bodySmall,
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      const SizedBox(width: 12),
+                                      if (index < userDataList.length - 1)
+                                        const VerticalDivider(
+                                          thickness: 2,
+                                          width: 2,
+                                          color: Colors.white,
+                                        ),
+                                      const SizedBox(width: 12),
+                                    ],
                                   );
                                 },
                               ),
@@ -116,18 +109,17 @@ class ProfilePage extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(height: 24),
+                const SizedBox(height: 24),
                 //tabel content
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(16),
-                    border: Border.all(
-                        color: Theme.of(context).colorScheme.outline),
+                    border: Border.all(color: Theme.of(context).colorScheme.outline),
                     color: Theme.of(context).colorScheme.surface,
                     boxShadow: [
                       BoxShadow(
                         color: Theme.of(context).colorScheme.outline,
-                        offset: Offset(0, 4),
+                        offset: const Offset(0, 4),
                         blurRadius: 4,
                       ),
                     ],
@@ -135,12 +127,12 @@ class ProfilePage extends StatelessWidget {
                   child: Column(
                     children: [
                       Container(
-                        padding: EdgeInsets.all(10),
+                        padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(16),
-                          border: Border.all(
-                              color: Theme.of(context).colorScheme.outline),
-                          gradient: LinearGradient(
+                          border:
+                              Border.all(color: Theme.of(context).colorScheme.outline),
+                          gradient: const LinearGradient(
                             colors: [Color(0xFFADECFF), Color(0xFFADECFF)],
                             begin: Alignment.topCenter,
                             end: Alignment.bottomCenter,
@@ -156,11 +148,9 @@ class ProfilePage extends StatelessWidget {
                             Row(
                               children: [
                                 Text('Profile1',
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .labelMedium),
-                                SizedBox(width: 8),
-                                Icon(Icons.edit),
+                                    style: Theme.of(context).textTheme.labelMedium),
+                                const SizedBox(width: 8),
+                                const Icon(Icons.edit),
                               ],
                             ),
                           ],
@@ -172,13 +162,12 @@ class ProfilePage extends StatelessWidget {
                         itemBuilder: (context, index) {
                           final obat = daftarObat[index];
                           return Container(
-                            margin: EdgeInsets.all(12),
+                            margin: const EdgeInsets.all(12),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text('• ${obat.nama}',
-                                    style:
-                                        Theme.of(context).textTheme.bodyMedium),
+                                    style: Theme.of(context).textTheme.bodyMedium),
                                 Row(
                                   children: [
                                     Container(
@@ -190,18 +179,14 @@ class ProfilePage extends StatelessWidget {
                                             .primaryContainer,
                                         borderRadius: BorderRadius.circular(16),
                                         border: Border.all(
-                                            color: Theme.of(context)
-                                                .colorScheme
-                                                .outline),
+                                            color: Theme.of(context).colorScheme.outline),
                                       ),
                                       child: Text(
                                         obat.jam1,
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .bodyMedium,
+                                        style: Theme.of(context).textTheme.bodyMedium,
                                       ),
                                     ),
-                                    SizedBox(width: 4),
+                                    const SizedBox(width: 4),
                                     Container(
                                       width: 46,
                                       alignment: Alignment.center,
@@ -211,15 +196,11 @@ class ProfilePage extends StatelessWidget {
                                             .primaryContainer,
                                         borderRadius: BorderRadius.circular(16),
                                         border: Border.all(
-                                            color: Theme.of(context)
-                                                .colorScheme
-                                                .outline),
+                                            color: Theme.of(context).colorScheme.outline),
                                       ),
                                       child: Text(
                                         obat.jam2,
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .bodyMedium,
+                                        style: Theme.of(context).textTheme.bodyMedium,
                                       ),
                                     ),
                                   ],
@@ -240,11 +221,11 @@ class ProfilePage extends StatelessWidget {
 }
 
 class UserData {
-  final String title;
-  final String value;
-  final String unit;
-
   UserData({required this.title, required this.value, required this.unit});
+
+  final String title;
+  final String unit;
+  final String value;
 }
 
 final List<UserData> userDataList = [
@@ -254,15 +235,15 @@ final List<UserData> userDataList = [
 ];
 
 class Obat {
-  final String nama;
-  final String jam1;
-  final String jam2;
-
   Obat({
     required this.nama,
     required this.jam1,
     required this.jam2,
   });
+
+  final String jam1;
+  final String jam2;
+  final String nama;
 }
 
 List<Obat> daftarObat = [

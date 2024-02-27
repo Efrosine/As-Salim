@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CColors {
+  static const Color buttonBackground = Color(0xFF00687A);
   static const LinearGradient gradientVariant1 = LinearGradient(
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
@@ -23,5 +24,4 @@ class CColors {
     ],
     stops: [0.0, 0.2, 1],
   );
-  static const Color buttonBackground = Color(0xFF00687A);
 }

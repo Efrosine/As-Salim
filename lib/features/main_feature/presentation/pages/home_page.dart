@@ -6,8 +6,9 @@ import 'package:assalim/features/main_feature/presentation/pages/main_pages.dart
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  final TextEditingController searchController = TextEditingController();
   HomePage({super.key});
+
+  final TextEditingController searchController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class HomePage extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: SingleChildScrollView(
-          padding: EdgeInsets.all(24),
+          padding: const EdgeInsets.all(24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -31,19 +32,19 @@ class HomePage extends StatelessWidget {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => ProfilePage()),
+                        MaterialPageRoute(builder: (context) => const ProfilePage()),
                       );
                     },
-                    child: CircleAvatar(
+                    child: const CircleAvatar(
                       radius: 35,
                       backgroundImage: AssetImage("assets/images/profile.jpg"),
                     ),
                   )
                 ],
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(18),
                   color: Colors.grey[200],
@@ -56,13 +57,8 @@ class HomePage extends StatelessWidget {
                         decoration: InputDecoration(
                           border: InputBorder.none,
                           hintText: "Punya masalah kesehatan?",
-                          hintStyle: Theme.of(context)
-                              .textTheme
-                              .bodyMedium!
-                              .copyWith(
-                                  color: Theme.of(context)
-                                      .colorScheme
-                                      .onSurfaceVariant),
+                          hintStyle: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                              color: Theme.of(context).colorScheme.onSurfaceVariant),
                         ),
                       ),
                     ),
@@ -78,12 +74,12 @@ class HomePage extends StatelessWidget {
                           ),
                         );
                       },
-                      icon: Icon(Icons.search),
+                      icon: const Icon(Icons.search),
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -102,8 +98,8 @@ class HomePage extends StatelessWidget {
               ),
               GridView.builder(
                 shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 3,
                   crossAxisSpacing: 16.0,
                   mainAxisSpacing: 16.0,
@@ -123,12 +119,11 @@ class HomePage extends StatelessWidget {
                         color: Colors.white.withOpacity(0.6),
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(
-                            color:
-                                Theme.of(context).colorScheme.outlineVariant),
+                            color: Theme.of(context).colorScheme.outlineVariant),
                         boxShadow: [
                           BoxShadow(
                             color: Colors.black.withOpacity(0.1),
-                            offset: Offset(0, 4),
+                            offset: const Offset(0, 4),
                             blurRadius: 4,
                           ),
                         ],
@@ -148,14 +143,14 @@ class HomePage extends StatelessWidget {
                   );
                 },
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               Text(
                 "Top Doctor",
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               ListView.builder(
                 shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 itemCount: doctors.length,
                 itemBuilder: (BuildContext context, int index) {
                   DoctorData doctor = doctors[index];
@@ -164,21 +159,20 @@ class HomePage extends StatelessWidget {
                       // Buka ChatPage dengan dokter yang sesuai
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) => ChatPage(doctor: doctor)),
+                        MaterialPageRoute(builder: (context) => ChatPage(doctor: doctor)),
                       );
                     },
                     child: Container(
                       height: 88,
-                      margin: EdgeInsets.only(bottom: 16),
-                      padding: EdgeInsets.symmetric(horizontal: 16),
+                      margin: const EdgeInsets.only(bottom: 16),
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 238, 238, 238),
+                        color: const Color.fromARGB(255, 238, 238, 238),
                         borderRadius: BorderRadius.circular(12),
                         boxShadow: [
                           BoxShadow(
                             color: Colors.black.withOpacity(0.1),
-                            offset: Offset(0, 4),
+                            offset: const Offset(0, 4),
                             blurRadius: 4,
                           ),
                         ],

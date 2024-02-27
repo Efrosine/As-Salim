@@ -1,10 +1,6 @@
-import 'dart:ui';
-
-import 'package:assalim/config/constants/color.dart';
 import 'package:assalim/config/extension/build_context_extension.dart';
 import 'package:assalim/core/common/custom_background/base_background.dart';
 import 'package:assalim/core/common/custom_widget/backgroud_widget.dart';
-import 'package:assalim/features/auth/presentation/pages/auth_pages.dart';
 import 'package:assalim/features/main_feature/presentation/pages/main_pages.dart';
 import 'package:flutter/material.dart';
 
@@ -29,20 +25,20 @@ class SignInPage extends StatelessWidget {
                       height: 470,
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
-                          begin: Alignment(0.83, 0.29),
-                          end: Alignment(0, 0),
+                          begin: const Alignment(0.83, 0.29),
+                          end: const Alignment(0, 0),
                           colors: [
                             Colors.transparent,
                             Colors.white.withOpacity(0.2),
                           ],
-                          stops: [0.0471, 0.9783],
+                          stops: const [0.0471, 0.9783],
                         ),
                         borderRadius: BorderRadius.circular(16),
                         border: Border.all(
                           color: Colors.white,
                           width: 2,
                         ),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             color: Colors.black12,
                             spreadRadius: 2,
@@ -51,46 +47,46 @@ class SignInPage extends StatelessWidget {
                           ),
                         ],
                       ),
-                      padding: EdgeInsets.only(left: 24, right: 24),
+                      padding: const EdgeInsets.only(left: 24, right: 24),
                       child: Center(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text("Login",
                                 style: Theme.of(context).textTheme.displaySmall),
-                            SizedBox(height: 16),
+                            const SizedBox(height: 16),
                             TextField(
                               decoration: InputDecoration(
                                 floatingLabelBehavior: FloatingLabelBehavior.always,
                                 labelText: "Username",
-                                prefixIcon: Icon(
+                                prefixIcon: const Icon(
                                   Icons.search,
                                 ),
                                 hintText: "Hint",
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 ),
-                                contentPadding:
-                                    EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                                contentPadding: const EdgeInsets.symmetric(
+                                    horizontal: 16, vertical: 12),
                               ),
                             ),
-                            SizedBox(height: 24),
+                            const SizedBox(height: 24),
                             TextField(
                               decoration: InputDecoration(
                                 floatingLabelBehavior: FloatingLabelBehavior.always,
                                 labelText: "Password",
-                                prefixIcon: Icon(
+                                prefixIcon: const Icon(
                                   Icons.search,
                                 ),
                                 hintText: "Hint",
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 ),
-                                contentPadding:
-                                    EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                                contentPadding: const EdgeInsets.symmetric(
+                                    horizontal: 16, vertical: 12),
                               ),
                             ),
-                            SizedBox(height: 10),
+                            const SizedBox(height: 10),
                             Align(
                               alignment: Alignment.centerRight,
                               child: TextButton(
@@ -100,16 +96,17 @@ class SignInPage extends StatelessWidget {
                                     style: Theme.of(context).textTheme.labelLarge,
                                   )),
                             ),
-                            SizedBox(height: 32),
+                            const SizedBox(height: 32),
                             Center(
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                     backgroundColor: context.colorScheme.primary,
-                                    minimumSize: Size(264, 40)),
+                                    minimumSize: const Size(264, 40)),
                                 onPressed: () {
                                   Navigator.push(
                                     context,
-                                    MaterialPageRoute(builder: (context) => NavBarPage()),
+                                    MaterialPageRoute(
+                                        builder: (context) => const NavBarPage()),
                                   );
                                 },
                                 child: Text(
@@ -121,7 +118,7 @@ class SignInPage extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            SizedBox(height: 16),
+                            const SizedBox(height: 16),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
@@ -129,7 +126,7 @@ class SignInPage extends StatelessWidget {
                                   'Tidak punya akun ?',
                                   style: Theme.of(context).textTheme.bodySmall,
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 5,
                                 ),
                                 TextButton(
@@ -145,7 +142,7 @@ class SignInPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 50),
+                  const SizedBox(height: 50),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -153,7 +150,7 @@ class SignInPage extends StatelessWidget {
                         "assets/logo/kemenag.png",
                         height: 60,
                       ),
-                      SizedBox(width: 25),
+                      const SizedBox(width: 25),
                       Image.asset(
                         "assets/logo/kemenkes.png",
                         fit: BoxFit.cover,

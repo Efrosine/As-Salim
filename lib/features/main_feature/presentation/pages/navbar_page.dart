@@ -10,7 +10,18 @@ class NavBarPage extends StatefulWidget {
 }
 
 class _NavBarPageState extends State<NavBarPage> {
+  List<NavigationDestination> listLabel = [
+    const NavigationDestination(
+      icon: Icon(Icons.home),
+      label: 'Home',
+    ),
+    NavigationDestination(icon: Icon(MdiIcons.doctor), label: "Doctors"),
+    const NavigationDestination(icon: Icon(Icons.newspaper), label: 'News'),
+    const NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
+  ];
+
   int _curentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,20 +36,10 @@ class _NavBarPageState extends State<NavBarPage> {
       ),
       body: [
         HomePage(),
-        ListDoctorPage(),
-        NewsPage(),
-        ProfilePage(),
+        const ListDoctorPage(),
+        const NewsPage(),
+        const ProfilePage(),
       ][_curentIndex],
     );
   }
-
-  List<NavigationDestination> listLabel = [
-    NavigationDestination(
-      icon: Icon(Icons.home),
-      label: 'Home',
-    ),
-    NavigationDestination(icon: Icon(MdiIcons.doctor), label: "Doctors"),
-    NavigationDestination(icon: Icon(Icons.newspaper), label: 'News'),
-    NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
-  ];
 }

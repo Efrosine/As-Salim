@@ -22,6 +22,6 @@ class MainApp extends StatelessWidget {
         builder: (context, child) => MediaQuery(
             data: MediaQuery.of(context).copyWith(textScaler: TextScaler.noScaling),
             child: child!),
-        home: NutritionalNeedsPage());
+        home: const NutritionalNeedsPage());
   }
 }

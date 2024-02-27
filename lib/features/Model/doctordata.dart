@@ -1,13 +1,13 @@
 class DoctorData {
-  final String name;
-  final String specialization;
-  final String image;
-
   DoctorData({
     required this.name,
     required this.specialization,
     required this.image,
   });
+
+  final String image;
+  final String name;
+  final String specialization;
 }
 
 List<DoctorData> doctors = [

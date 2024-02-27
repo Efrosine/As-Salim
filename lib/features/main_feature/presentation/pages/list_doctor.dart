@@ -11,23 +11,23 @@ class ListDoctorPage extends StatelessWidget {
         title: const Text('Daftar Dokter'),
       ),
       body: ListView(
-        padding: EdgeInsets.all(24),
+        padding: const EdgeInsets.all(24),
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Icon(Icons.arrow_back_ios_new_rounded),
+              const Icon(Icons.arrow_back_ios_new_rounded),
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Icon(MdiIcons.calendarToday),
-                  Text('Kamis, 16 Maret 2023')
+                  const Text('Kamis, 16 Maret 2023')
                 ],
               ),
-              Icon(Icons.arrow_forward_ios_rounded),
+              const Icon(Icons.arrow_forward_ios_rounded),
             ],
           ),
-          Divider(height: 24),
+          const Divider(height: 24),
         ],
       ),
     );

@@ -19,7 +19,7 @@ class NutritionalNeedsPage extends StatelessWidget {
       body: ListView(
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
             child: Text(
               'Saran Makanan',
               style: context.textTheme.titleLarge,
@@ -48,11 +48,12 @@ class NutritionalNeedsPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                          padding:
+                              const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                           child: Row(
                             children: [
-                              Icon(Icons.bakery_dining_outlined),
-                              Gap(16),
+                              const Icon(Icons.bakery_dining_outlined),
+                              const Gap(16),
                               Text('Nama Makanan', style: context.textTheme.titleMedium),
                             ],
                           ),
@@ -64,20 +65,21 @@ class NutritionalNeedsPage extends StatelessWidget {
                               alignment: Alignment.centerLeft,
                               child: IconButton.filledTonal(
                                 onPressed: () {},
-                                icon: Icon(Icons.arrow_back_ios_new_rounded),
+                                icon: const Icon(Icons.arrow_back_ios_new_rounded),
                               ),
                             ),
                             Align(
                               alignment: Alignment.centerRight,
                               child: IconButton.filledTonal(
                                 onPressed: () {},
-                                icon: Icon(Icons.arrow_forward_ios_rounded),
+                                icon: const Icon(Icons.arrow_forward_ios_rounded),
                               ),
                             ),
                           ]),
                         ),
                         Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                          padding:
+                              const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                           child: Text(
                               'Deskripsi singkat tentang makanan\nDeskripsi singkat tentang makanan',
                               style: context.textTheme.bodyMedium),
@@ -91,7 +93,7 @@ class NutritionalNeedsPage extends StatelessWidget {
                                   ]))
                               .toList(),
                         ),
-                        Gap(12),
+                        const Gap(12),
                       ],
                     ),
                   ),
@@ -100,7 +102,7 @@ class NutritionalNeedsPage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
             child: Text('Makanan yang dibatasi', style: context.textTheme.titleLarge),
           ),
           ListView.separated(
@@ -108,7 +110,7 @@ class NutritionalNeedsPage extends StatelessWidget {
             physics: const NeverScrollableScrollPhysics(),
             padding: const EdgeInsets.fromLTRB(24, 0, 24, 24),
             itemCount: 5,
-            separatorBuilder: (context, index) => Gap(8),
+            separatorBuilder: (context, index) => const Gap(8),
             itemBuilder: (context, index) {
               return Container(
                 height: 64,
@@ -122,7 +124,7 @@ class NutritionalNeedsPage extends StatelessWidget {
                         color: Colors.red,
                       ),
                     ),
-                    Gap(16),
+                    const Gap(16),
                     Text('Nama Makanan', style: context.textTheme.bodyLarge),
                   ],
                 ),

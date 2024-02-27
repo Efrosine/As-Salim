@@ -9,11 +9,11 @@ import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class CategoryData {
-  final String name;
-  final IconData icon;
-  final Widget page;
-
   CategoryData({required this.name, required this.icon, required this.page});
+
+  final IconData icon;
+  final String name;
+  final Widget page;
 }
 
 List<CategoryData> categories = [
@@ -26,19 +26,19 @@ List<CategoryData> categories = [
   CategoryData(
       name: "Cek Tekanan dan Gula Darah",
       icon: MdiIcons.heartPulse,
-      page: MonitorBloodPressurePage()),
+      page: const MonitorBloodPressurePage()),
   CategoryData(
       name: "Kebutuhan Air Mineral",
       icon: MdiIcons.beer,
-      page: MonitorWaterConsumtionPage()),
+      page: const MonitorWaterConsumtionPage()),
   CategoryData(
       name: "Kebutuhan Nutrisi",
       icon: MdiIcons.foodApple,
-      page: NutritionalNeedsPage()),
+      page: const NutritionalNeedsPage()),
   CategoryData(
       name: "Cek Kepatuhan Obat",
       icon: MdiIcons.clipboardTextClockOutline,
-      page: MonitorMedicineConsumptionPage()),
+      page: const MonitorMedicineConsumptionPage()),
   CategoryData(
-      name: "Program Kebugaran", icon: MdiIcons.runFast, page: HealthyPage()),
+      name: "Program Kebugaran", icon: MdiIcons.runFast, page: const HealthyPage()),
 ];

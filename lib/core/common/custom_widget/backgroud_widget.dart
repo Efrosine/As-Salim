@@ -15,9 +15,9 @@ class BackgourdWidget extends StatelessWidget {
     required this.child,
   });
 
-  final List<LinearGradient>? linearGradient;
   final Widget? baseBackground;
   final Widget child;
+  final List<LinearGradient>? linearGradient;
 
   @override
   Widget build(BuildContext context) {

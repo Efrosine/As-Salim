@@ -4,13 +4,12 @@ import 'package:assalim/features/Model/keluhandata.dart';
 import 'package:flutter/material.dart';
 
 class SearchDisseasePage extends StatefulWidget {
+  const SearchDisseasePage({Key? key, required this.initialQuery}) : super(key: key);
+
   final String initialQuery;
 
-  const SearchDisseasePage({Key? key, required this.initialQuery})
-      : super(key: key);
-
   @override
-  _SearchDisseasePageState createState() => _SearchDisseasePageState();
+  State<SearchDisseasePage> createState() => _SearchDisseasePageState();
 }
 
 class _SearchDisseasePageState extends State<SearchDisseasePage> {
@@ -25,6 +24,15 @@ class _SearchDisseasePageState extends State<SearchDisseasePage> {
     handleSearch();
   }
 
+  void handleSearch() {
+    setState(() {
+      searchResults = keluhanList
+          .where((keluhan) =>
+              keluhan.judul.toLowerCase().contains(searchController.text.toLowerCase()))
+          .toList();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return BackgourdWidget(
@@ -34,10 +42,10 @@ class _SearchDisseasePageState extends State<SearchDisseasePage> {
         appBar: AppBar(
           toolbarHeight: 110,
           flexibleSpace: Container(
-            padding: EdgeInsets.only(left: 45, top: 50, right: 24),
+            padding: const EdgeInsets.only(left: 45, top: 50, right: 24),
             decoration: BoxDecoration(
               color: Theme.of(context).colorScheme.primaryContainer,
-              borderRadius: BorderRadius.horizontal(
+              borderRadius: const BorderRadius.horizontal(
                 left: Radius.circular(16),
                 right: Radius.circular(16),
               ),
@@ -46,7 +54,7 @@ class _SearchDisseasePageState extends State<SearchDisseasePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(18),
                     border: Border.all(
@@ -63,49 +71,44 @@ class _SearchDisseasePageState extends State<SearchDisseasePage> {
                           decoration: InputDecoration(
                             border: InputBorder.none,
                             hintText: "Punya masalah kesehatan?",
-                            hintStyle: Theme.of(context)
-                                .textTheme
-                                .bodyMedium!
-                                .copyWith(
-                                  color: Theme.of(context)
-                                      .colorScheme
-                                      .onSurfaceVariant,
+                            hintStyle: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                                  color: Theme.of(context).colorScheme.onSurfaceVariant,
                                 ),
                           ),
                         ),
                       ),
                       IconButton(
                         onPressed: handleSearch,
-                        icon: Icon(Icons.search),
+                        icon: const Icon(Icons.search),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
               ],
             ),
           ),
         ),
         body: Container(
-          margin: EdgeInsets.symmetric(horizontal: 24),
+          margin: const EdgeInsets.symmetric(horizontal: 24),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 24),
+                const SizedBox(height: 24),
                 Row(
                   children: [
-                    Icon(Icons.find_in_page),
-                    SizedBox(width: 8),
+                    const Icon(Icons.find_in_page),
+                    const SizedBox(width: 8),
                     Text(
                       "Terdapat ${searchResults.length} hasil pencarian",
                       style: Theme.of(context).textTheme.bodyMedium,
                     )
                   ],
                 ),
-                SizedBox(height: 34),
+                const SizedBox(height: 34),
                 ListView.builder(
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
                   itemCount: searchResults.length,
                   itemBuilder: (context, index) {
@@ -114,8 +117,8 @@ class _SearchDisseasePageState extends State<SearchDisseasePage> {
                         Container(
                           width: 312,
                           padding:
-                              EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                          color: Color.fromARGB(255, 230, 236, 239),
+                              const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                          color: const Color.fromARGB(255, 230, 236, 239),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -130,7 +133,7 @@ class _SearchDisseasePageState extends State<SearchDisseasePage> {
                             ],
                           ),
                         ),
-                        SizedBox(height: 8),
+                        const SizedBox(height: 8),
                       ],
                     );
                   },
@@ -141,15 +144,5 @@ class _SearchDisseasePageState extends State<SearchDisseasePage> {
         ),
       ),
     );
-  }
-
-  void handleSearch() {
-    setState(() {
-      searchResults = keluhanList
-          .where((keluhan) => keluhan.judul
-              .toLowerCase()
-              .contains(searchController.text.toLowerCase()))
-          .toList();
-    });
   }
 }

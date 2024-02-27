@@ -12,12 +12,12 @@ class GlassmorphismBackground extends StatelessWidget {
     this.padding,
   }) : super(key: key);
 
+  final double blur;
+  final double borderRadius;
   final Widget child;
   final Color color;
-  final double blur;
-  final double opacity;
-  final double borderRadius;
   final EdgeInsetsGeometry? margin;
+  final double opacity;
   final EdgeInsetsGeometry? padding;
 
   @override
